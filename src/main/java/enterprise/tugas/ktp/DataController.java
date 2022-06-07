@@ -93,7 +93,7 @@ public class DataController {
         
         djc.create(data);
         
-        return new RedirectView("/ktp");
+        return new RedirectView("/ktp/ktp");
 //        return "ktp/create";
     }
     
@@ -135,7 +135,7 @@ public class DataController {
         return "ktp/edit";
     }
     
-    @PutMapping(value = "/ktp/editdata/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PostMapping(value = "/ktp/editdata/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public RedirectView editData(@PathVariable long id, HttpServletRequest request, Model model, @RequestParam("photo") MultipartFile file) throws ParseException, Exception{
         Data data = djc.findData(id);;
         
@@ -171,10 +171,10 @@ public class DataController {
         
         djc.edit(data);
         
-        return new RedirectView("/ktp");
+        return new RedirectView("/ktp/ktp");
     }
     
-    @DeleteMapping(value = "/ktp/deletedata/{id}")
+    @PostMapping(value = "/ktp/deletedata/{id}")
     public RedirectView deleteData(@PathVariable long id) throws ParseException, Exception{
         Data data = djc.findData(id);
         try{
@@ -185,7 +185,7 @@ public class DataController {
             
         }
         
-        return new RedirectView("/ktp");
+        return new RedirectView("/ktp/ktp");
     }
     
     

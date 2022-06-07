@@ -13,8 +13,7 @@
                             Edit Data KTP
                         </div>
                         <div class="card-body">
-                            <form th:action="@{/ktp/editdata/{id}(id=${data.id})}" class="form" th:method="put" enctype="multipart/form-data">
-                                <input type="hidden" name="_method" value="put" />
+                            <form th:action="@{/ktp/editdata/{id}(id=${data.id})}" class="form" th:method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
                                     <label for="noktp" class="col-sm-2 col-form-label">No KTP</label>
                                     <div class="col-sm-10">
