@@ -7,13 +7,13 @@
                     <b>Data KTP</b>
                 </div>
                 <div class="card-body">
-                    <a class="btn btn-sm btn-danger" href="/ktp/"><i class="fa fa-arrow-left "></i> Kembali </a><br><br>
+                    <a class="btn btn-sm btn-danger" th:href="@{/ktp}"><i class="fa fa-arrow-left "></i> Kembali </a><br><br>
                     <div class="card">
                         <div class="card-header">
                             Tambah Data KTP
                         </div>
                         <div class="card-body">
-                            <form action="/ktp/newdata" class="form" method="post" enctype="multipart/form-data">
+                            <form th:action="@{/ktp/newdata}" class="form" method="post" enctype="multipart/form-data">
                                 <div class="form-group row">
                                     <label for="noktp" class="col-sm-2 col-form-label">No KTP</label>
                                     <div class="col-sm-10">

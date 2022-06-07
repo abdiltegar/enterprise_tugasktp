@@ -10,6 +10,7 @@
 	</parent>
 	<groupId>enterprise.tugas</groupId>
 	<artifactId>tugas.ktp</artifactId>
+        <packaging>war</packaging>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>tugas.ktp</name>
 	<description>Tugas PAE ktp</description>
@@ -51,6 +52,7 @@
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
 		</dependency>
+                
 	 <dependency>
 	  <groupId>org.eclipse.persistence</groupId>
 	  <artifactId>org.eclipse.persistence.core</artifactId>
@@ -92,15 +94,21 @@
 	  <version>2.7.7</version>
 	  <scope>provided</scope>
 	 </dependency>
+         <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-tomcat</artifactId>
+            <scope>provided</scope>
+         </dependency>
 	</dependencies>
 
 	<build>
-		<plugins>
-			<plugin>
-				<groupId>org.springframework.boot</groupId>
-				<artifactId>spring-boot-maven-plugin</artifactId>
-			</plugin>
-		</plugins>
+            <finalName>${artifactId}</finalName>
+            <plugins>
+                <plugin>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-maven-plugin</artifactId>
+                </plugin>
+            </plugins>
 	</build>
 
 </project>

@@ -15,6 +15,7 @@ import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.util.StringUtils;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -134,7 +135,7 @@ public class DataController {
         return "ktp/edit";
     }
     
-    @PostMapping(value = "/ktp/editdata/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
+    @PutMapping(value = "/ktp/editdata/{id}", consumes = MediaType.MULTIPART_FORM_DATA_VALUE)
     public RedirectView editData(@PathVariable long id, HttpServletRequest request, Model model, @RequestParam("photo") MultipartFile file) throws ParseException, Exception{
         Data data = djc.findData(id);;
         
@@ -173,7 +174,7 @@ public class DataController {
         return new RedirectView("/ktp");
     }
     
-    @PostMapping(value = "/ktp/deletedata/{id}")
+    @DeleteMapping(value = "/ktp/deletedata/{id}")
     public RedirectView deleteData(@PathVariable long id) throws ParseException, Exception{
         Data data = djc.findData(id);
         try{
